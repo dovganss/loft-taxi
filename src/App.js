@@ -3,6 +3,7 @@ import {Home} from './Home'
 import {About} from './About'
 import {Profile} from './Profile'
 import './App.css';
+import {Header} from './Header'
 
 const PAGES = {
   home: <Home/>,
@@ -20,39 +21,7 @@ class App extends React.Component {
 
   render() {
     return <>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <button 
-            onClick={() => {
-              this.navigateTo("home");
-              }}
-              >
-              Home
-            </button>
-          </li>
-          <li>
-            <button 
-            onClick={() => {
-              this.navigateTo("about");
-              }}
-              >
-              About
-            </button>
-          </li>
-          <li>
-            <button 
-            onClick={() => {
-              this.navigateTo("profile");
-              }}
-              >
-              Profile
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <Header navigateTo={this.navigateTo}/>
     <main>
       <section>
         {PAGES[this.state.currentPage]}
