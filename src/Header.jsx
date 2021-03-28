@@ -1,8 +1,7 @@
 import React from 'react'
 
 export const Header = ({navigateTo}) => {
-  return 
-  (<header>
+  return (<header>
   <nav>
     <ul>
       <li>
