@@ -1,13 +1,13 @@
 import React from "react";
 import {Home} from './Home'
-import {About} from './About'
+import {Map} from './Map'
 import {Profile} from './Profile'
 import './App.css';
 import {Header} from './Header'
 
 const PAGES = {
   home: <Home/>,
-  about: <About/>,
+  map: <Map/>,
   profile: <Profile/>,
 }
 

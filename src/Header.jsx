@@ -17,10 +17,10 @@ export const Header = ({navigateTo}) => {
       <li>
         <button 
         onClick={() => {
-          navigateTo("about");
+          navigateTo("map");
           }}
           >
-          About
+          Map
         </button>
       </li>
       <li>
