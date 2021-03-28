@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Header = ({navigateTo}) => {
   return 
-  <header>
+  (<header>
   <nav>
     <ul>
       <li>
@@ -34,5 +34,5 @@ export const Header = ({navigateTo}) => {
       </li>
     </ul>
   </nav>
-</header>
+</header>)
 }
