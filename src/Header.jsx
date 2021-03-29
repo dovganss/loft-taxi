@@ -1,8 +1,7 @@
 import React from 'react'
 
 export const Header = ({navigateTo}) => {
-  return 
-  <header>
+  return (<header>
   <nav>
     <ul>
       <li>
@@ -17,10 +16,10 @@ export const Header = ({navigateTo}) => {
       <li>
         <button 
         onClick={() => {
-          navigateTo("about");
+          navigateTo("map");
           }}
           >
-          About
+          Map
         </button>
       </li>
       <li>
@@ -34,5 +33,5 @@ export const Header = ({navigateTo}) => {
       </li>
     </ul>
   </nav>
-</header>
+</header>)
 }
