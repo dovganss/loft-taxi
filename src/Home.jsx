@@ -34,6 +34,11 @@ export class Home extends Component  {
     );
   }
 }
-  
 
+Home.propTypes = {
+  isLoggedIn: PropTypes.bool,
+  logIn: PropTypes.func,
+  navigate: PropTypes.func,
+};
+  
 export const HomeWithAuth = withAuth(Home)

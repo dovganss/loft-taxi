@@ -4,6 +4,7 @@ import {Map} from './Map'
 import {ProfileWithAuth} from './Profile'
 import {Header} from './Header'
 import {withAuth} from './AuthContext'
+import PropTypes from 'prop-types';
 import './App.css';
 
 const PAGES = {
@@ -35,5 +36,9 @@ class App extends React.Component {
     </>;
   }
 }
+
+App.propTypes = {
+  isLoggedIn: PropTypes.bool
+};
 
 export default withAuth(App);
