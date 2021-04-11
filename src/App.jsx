@@ -3,7 +3,7 @@ import {HomeWithAuth} from './Home'
 import {Map} from './Map'
 import {ProfileWithAuth} from './Profile'
 import {Header} from './Header'
-import {withAuth} from './AuthContext'
+import {connect} from 'react-redux'
 import PropTypes from 'prop-types';
 import './App.css';
 
@@ -41,4 +41,6 @@ App.propTypes = {
   isLoggedIn: PropTypes.bool
 };
 
-export default withAuth(App);
+export default connect(
+  state => ({isLoggedIn: state.auth.isLoggedIn})
+)(App);

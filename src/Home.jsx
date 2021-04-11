@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { withAuth } from './AuthContext'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {authenticate} from './actions';
+import PropTypes from 'prop-types';
 
 export class Home extends Component  {
   goToProfile = () => {
@@ -9,8 +11,8 @@ export class Home extends Component  {
   authenticate = (event) => {
     event.preventDefault()
     const { email, password } = event.target;
-    this.props.logIn(email.value, password.value)
-  }
+    this.props.authenticate(email.value, password.value)
+  };
 
   render() {
     return (
@@ -41,4 +43,7 @@ Home.propTypes = {
   navigate: PropTypes.func,
 };
   
-export const HomeWithAuth = withAuth(Home)
+export const HomeWithAuth = connect(
+  (state) => ({isLoggedIn: state.auth.isLoggedIn}),
+  { authenticate }
+)(Home)
