@@ -1,15 +1,24 @@
-import React, { Component } from 'react'
-import { withAuth } from './AuthContext'
+import React, { Component } from "react";
+import {logIn, logOut} from './actions'
+import {connect} from 'react-redux'
 
 export class Profile extends Component {
-  unauthenticate = () => {
+  unauthenticate = (event) => {
+    event.preventDefault();
     this.props.logOut();
-    this.props.navigate("home")
-  }
+  };
 
   render() {
-    return <p>Profile. <button onClick={this.unauthenticate}>Log out</button></p>
+    return (
+      <p>
+        Profile.
+        <button onClick={this.unauthenticate}>Log out</button>
+      </p>
+    );
   }
 }
 
-export const ProfileWithAuth = withAuth(Profile)
+export const ProfileWithConnect = connect(
+  null,
+  { logIn, logOut }
+)(Profile);
