@@ -1,38 +1,33 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import {authenticate} from './actions';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { authenticate } from "./actions";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-export class Home extends Component  {
-  goToProfile = () => {
-    this.props.navigate("profile")
-  }
-
+export class Home extends Component {
   authenticate = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     const { email, password } = event.target;
-    this.props.authenticate(email.value, password.value)
+    this.props.authenticate(email.value, password.value);
   };
 
   render() {
     return (
       <>
-      {
-        this.props.isLoggedIn ? (
+        {this.props.isLoggedIn ? (
           <p>
-          You are logged in <button onClick={this.goToProfile}>go to profile</button>
+            You are logged in. <Link to="/profile">Go to profile</Link>
           </p>
         ) : (
           <form onSubmit={this.authenticate}>
-          <label htmlFor="email">Email:</label>
-          <input id="email" type="email" name="email" size="28" />
-          <label htmlFor="password">Password:</label>
-          <input id="password" type="" name="password" size="28" />
-          <button type="submit">Log in</button>
-        </form>
-        )
-      }
-     </>
+            <label htmlFor="email">Email:</label>
+            <input type="email" name="email" size="28" />
+            <label htmlFor="email">Password:</label>
+            <input type="password" name="password" size="28" />
+            <button type="submit">Log in</button>
+          </form>
+        )}
+      </>
     );
   }
 }
@@ -40,10 +35,9 @@ export class Home extends Component  {
 Home.propTypes = {
   isLoggedIn: PropTypes.bool,
   logIn: PropTypes.func,
-  navigate: PropTypes.func,
 };
-  
-export const HomeWithAuth = connect(
-  (state) => ({isLoggedIn: state.auth.isLoggedIn}),
+
+export const HomeWithConnect = connect(
+  (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
   { authenticate }
-)(Home)
+)(Home);
