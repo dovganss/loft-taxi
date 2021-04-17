@@ -1,6 +1,7 @@
 import React from "react";
 import { ProfileWithConnect } from "./Profile";
 import { HomeWithConnect } from "./Home";
+import { RegistrationWithConnect } from "./Registration";
 import { Map } from "./Map";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -30,8 +31,10 @@ export class App extends React.Component {
           <section>
             <Switch>
               <Route exact path="/" component={HomeWithConnect} />
+              <Route exact path="/registration" component={RegistrationWithConnect} />
               <PrivateRoute path="/map" component={Map} />
               <PrivateRoute path="/profile" component={ProfileWithConnect} />
+              <Route path="*" component={<div>404</div>} />
             </Switch>
           </section>
         </main>

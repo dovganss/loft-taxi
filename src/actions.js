@@ -8,3 +8,61 @@ export const authenticate = (email, password) => ({
   type: AUTHENTICATE,
   payload: { email, password },
 });
+
+
+export const SAVE_CARD = 'SAVE_CARD';
+export const SAVE_CARD_SUCCESS = 'SAVE_CARD_SUCCESS';
+export const GET_CARD = 'GET_CARD';
+export const GET_CARD_SUCCESS = 'GET_CARD_SUCCESS';
+
+export const saveCard = (cardNumber, expiryDate, cardName, cvc, token) => ({
+  type: SAVE_CARD,
+  payload: { cardNumber, expiryDate, cardName, cvc, token },
+});
+export const saveCardSuccess = () => ({
+  type: SAVE_CARD_SUCCESS,
+});
+export const getCard = (token) => ({ type: GET_CARD, payload: { token } })
+export const getCardSuccess = () => ({
+  type: GET_CARD_SUCCESS
+})
+
+
+export const REGISTRATED = 'REGISTRATED';
+export const REGISTRATED_SUCCESS = 'REGISTRATED_SUCCESS';
+
+export const registrSuccess = () => ({ type: REGISTRATED_SUCCESS });
+export const registr = (email, password, name, surname) => ({
+  type: REGISTRATED,
+  payload: { email, password, name, surname },
+});
+
+
+//список адресов
+
+export const GET_ADDRESS_LIST = 'GET_ADDRESS_LIST';
+export const GET_ADDRESS_LIST_SUCCESS = 'GET_ADDRESS_LIST_SUCCESS';
+export const GET_ADDRESS_LIST_FAILURE = 'GET_ADDRESS_LIST_FAILURE';
+
+export const getAdressList = () => ({
+  type: GET_ADDRESS_LIST,
+})
+
+export const getAdressListSuccess = (List) => ({
+  type: GET_ADDRESS_LIST_SUCCESS,
+  payload: list
+})
+
+export const getAdressListFailure = (error) => ({
+  type: GET_ADDRESS_LIST_FAILURE,
+  payload: error
+})
+
+
+//получение маршрута
+
+export const ROUTE = 'ROUTE';
+export const route = (address1, address2) => ({
+  type: ROUTE,
+  payload: { address1, address2 },
+});

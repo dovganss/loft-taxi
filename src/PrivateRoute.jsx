@@ -16,3 +16,9 @@ export const PrivateRoute = connect((state) => ({
     }
   />
 ));
+
+const mapStateToProps = (state) => ({
+  isLoggedIn: state.auth.isLoggedIn,
+});
+
+export default connect(mapStateToProps)(PrivateRoute)

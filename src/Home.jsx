@@ -22,10 +22,11 @@ export class Home extends Component {
           <form onSubmit={this.authenticate}>
             <label htmlFor="email">Email:</label>
             <input type="email" name="email" size="28" />
-            <label htmlFor="email">Password:</label>
+            <label htmlFor="email">Пароль:</label>
             <input type="password" name="password" size="28" />
-            <button type="submit">Log in</button>
+            <button type="submit">Войти</button>
           </form>
+          
         )}
       </>
     );
