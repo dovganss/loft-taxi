@@ -3,6 +3,7 @@ import { serverLogIn } from "../api";
 import { takeEvery, call, put } from "redux-saga/effects";
 
 export function* authenticateSaga(action) {
+  console.log(action)
   const { email, password } = action.payload;
   const data = yield call(serverLogIn, email, password);
   if (data.success) {

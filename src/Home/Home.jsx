@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { LoginForm } from './LoginForm';
+import { LoginFormWithConnect } from './LoginForm';
 
 export class Home extends Component {
   render() {
@@ -13,7 +13,7 @@ export class Home extends Component {
             You are logged in. <Link to="/profile">Go to profile</Link>
           </p>
         ) : (
-         <LoginForm />
+         <LoginFormWithConnect />
         )}
       </>
     );
