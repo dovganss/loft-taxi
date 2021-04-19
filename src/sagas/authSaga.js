@@ -1,5 +1,5 @@
-import { AUTHENTICATE, logIn } from "./actions";
-import { serverLogIn } from "./api";
+import { AUTHENTICATE, logIn } from "../actions";
+import { serverLogIn } from "../api";
 import { takeEvery, call, put } from "redux-saga/effects";
 
 export function* authenticateSaga(action) {

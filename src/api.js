@@ -21,8 +21,9 @@ export const serverSaveCard = async (data) => {
       body: JSON.stringify(data)
     }).then(res => res.json());
 };
+
 export const serverGetCard = async (token) => {
-  return fetch('https://loft-taxi.glitch.me/card?token=${token}')
+  return fetch(`https://loft-taxi.glitch.me/card?token=${token}`)
   .then(res => res.json());
 };
 

@@ -1,9 +1,10 @@
 import { takeEvery, call, put } from "redux-saga/effects";
-import { GET_ADDRESS_LIST, getAddressListSuccess } from "./../actions";
-import { serverGetAddressList } from "./../api";
+import { GET_ADDRESS_LIST, getAddressListSuccess, getAddressListFailure } from "../actions";
+import { serverGetAddressList } from "../api";
 
-export function* addressSaga() {
+export function* addressSaga(action) {
   try {
+    const { address1, address2 } = action.payload;
     const data = yield call(serverGetAddressList, address1, address2);
     if (data.addresses) {
       yield put(getAddressListSuccess(data.addresses));
