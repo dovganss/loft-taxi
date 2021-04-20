@@ -1,10 +1,14 @@
-import { GET_ADDRESS_LIST_SUCCESS, GET_ADDRESS_LIST_FAILURE, GET_ADDRESS_LIST } from "./../api";
+import { GET_ADDRESS_LIST_SUCCESS, GET_ADDRESS_LIST_FAILURE, GET_ADDRESS_LIST } from "../actions";
+import { LOG_IN, LOG_OUT } from "../actions";
+
 
 const initialState = {
   list: [],
   error: '',
   isLoading: false,
+  isLoggedIn: false
 };
+
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -15,7 +19,6 @@ export default function (state = initialState, action) {
         isLoading: true,
       }
     }
-
     case GET_ADDRESS_LIST_SUCCESS: {
       return {
         list: action.payload,
@@ -23,7 +26,6 @@ export default function (state = initialState, action) {
         isLoading: false,
       }
     }
-
     case GET_ADDRESS_LIST_FAILURE: {
       return {
         list: [],
@@ -31,5 +33,13 @@ export default function (state = initialState, action) {
         isLoading: false,
       }
     }
+    case LOG_IN: {
+      return {isLoggedIn: true}
+    }
+    case LOG_OUT: {
+      return {isLoggedIn: false}
+    }
+    default:
+      return state;
   }
 }

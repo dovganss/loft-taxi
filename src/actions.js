@@ -48,12 +48,12 @@ export const getAdressList = () => ({
   type: GET_ADDRESS_LIST,
 })
 
-export const getAdressListSuccess = (List) => ({
+export const getAddressListSuccess = (list) => ({
   type: GET_ADDRESS_LIST_SUCCESS,
   payload: list
 })
 
-export const getAdressListFailure = (error) => ({
+export const getAddressListFailure = (error) => ({
   type: GET_ADDRESS_LIST_FAILURE,
   payload: error
 })
