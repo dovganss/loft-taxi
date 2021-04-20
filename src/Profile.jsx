@@ -11,9 +11,22 @@ export class Profile extends Component {
   render() {
     return (
       <p>
-        Profile.
-        <button onClick={this.unauthenticate}>Log out</button>
+
+        <form className="form_profile" onSubmit={this.authenticate}>
+           <p className="title">Профиль</p> 
+           <p className="subtitle">Ввдеите платежные данные</p> 
+            <label className="label_profile" htmlFor="">Имя владельца</label>
+            <input type="" name="" size="" />
+            <label className="label_profile" htmlFor="">Номер карты</label>
+            <input type="" name="" size="" />
+            <label className="label_profile" htmlFor="">MM/YY</label>
+            <input type="" name="" size="" />
+            <label className="label_profile" htmlFor="">CVC</label>
+            <input type="" name="" size="" />
+            <button type="submit">Сохранить</button>
+          </form>
       </p>
+      
     );
   }
 }

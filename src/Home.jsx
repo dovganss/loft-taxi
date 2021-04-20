@@ -20,12 +20,14 @@ export class Home extends Component {
           </p>
         ) : (
           <form onSubmit={this.authenticate}>
+           <p className="title">Войти</p> 
             <label htmlFor="email">Email:</label>
             <input type="email" name="email" size="28" />
             <label htmlFor="email">Пароль:</label>
             <input type="password" name="password" size="28" />
             <button type="submit">Войти</button>
           </form>
+
           
         )}
       </>

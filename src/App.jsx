@@ -1,28 +1,34 @@
 import React from "react";
 import { ProfileWithConnect } from "./Profile";
 import { HomeWithConnect } from "./Home";
-import { RegistrationWithConnect } from "./Registration";
 import { Map } from "./Map";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, Route, Link } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
+import logo from "./img/Subtract.png"
+import logotext from "./img/lofttaxi.png"
 
 export class App extends React.Component {
   render() {
     return (
       <>
         <header>
+          <img className="logo_img" src={logo}></img>          
+          <img className="logo_text" src={logotext}></img>
           <nav>
             <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/map">Map</Link>
+                <Link to="/map">Карта</Link>
               </li>
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link to="/profile">Профиль</Link>
+              </li>
+              <li>
+                <Link to="">Выйти</Link>
               </li>
             </ul>
           </nav>
@@ -31,10 +37,8 @@ export class App extends React.Component {
           <section>
             <Switch>
               <Route exact path="/" component={HomeWithConnect} />
-              <Route exact path="/registration" component={RegistrationWithConnect} />
               <PrivateRoute path="/map" component={Map} />
               <PrivateRoute path="/profile" component={ProfileWithConnect} />
-              <Route path="*" component={<div>404</div>} />
             </Switch>
           </section>
         </main>
