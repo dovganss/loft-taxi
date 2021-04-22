@@ -4,8 +4,13 @@ import logo from "./img/Subtract.png"
 import logotext from "./img/lofttaxi.png"
 import { Link } from "react-router-dom";
 import { logOut } from './actions'
+import { connect } from "react-redux";
 
 export class Header extends React.Component {
+  logOut = (event) => {
+    event.preventDefault();
+    this.props.logOut();
+  };
   render() {
     return (
       <>
@@ -15,16 +20,13 @@ export class Header extends React.Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
                 <Link to="/map">Карта</Link>
               </li>
               <li>
                 <Link to="/profile">Профиль</Link>
               </li>
               <li>
-                <Link onSubmit={this.logOut}>Выйти</Link>
+                <span className="link" onClick={this.logOut}>Выйти</span>
               </li>
             </ul>
           </nav>
@@ -39,5 +41,10 @@ Header.propTypes = {
 };
 
 export default Header;
+
+export const HeaderWithConnect = connect(
+  (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
+  { logOut }
+)(Header);
 
 

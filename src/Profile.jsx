@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {logIn, logOut} from './actions'
 import {connect} from 'react-redux'
-import Header from "./Header";
+import {HeaderWithConnect} from "./Header";
 
 
 export class Profile extends Component {
@@ -13,8 +13,8 @@ export class Profile extends Component {
   render() {
     return (
 
-      <p>
-      < Header />
+      <p className="profile">
+  < HeaderWithConnect />
         <form className="form_profile" onSubmit={this.authenticate}>
            <p className="title">Профиль</p> 
            <p className="subtitle">Ввдеите платежные данные</p> 
