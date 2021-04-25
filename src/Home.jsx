@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import logo from "./img/Subtract.png"
 import logotext from "./img/lofttaxi.png"
-
 export class Home extends Component {
+  
   authenticate = (event) => {
     event.preventDefault();
     const { email, password } = event.target;
@@ -14,13 +14,11 @@ export class Home extends Component {
   };
 
   render() {
+   if(this.props.isLoggedIn){
+     this.props.history.push('/map')}
+
     return (
       <>
-        {this.props.isLoggedIn ? (
-          <p>
-            You are logged in. <Link to="/profile">Go to profile</Link>
-          </p>
-        ) : (
           <div className="home"> 
           <img src={logo} className="home__logo1"></img>
           <img src={logotext} className="home__logo2"></img>
@@ -33,18 +31,13 @@ export class Home extends Component {
             <button type="submit">Войти</button>
           </form>
           </div>
-          
-        )}
-      </>
-    );
+      </>)
   }
 }
-
 Home.propTypes = {
   isLoggedIn: PropTypes.bool,
   logIn: PropTypes.func,
 };
-
 export const HomeWithConnect = connect(
   (state) => ({ isLoggedIn: state.auth.isLoggedIn }),
   { authenticate }

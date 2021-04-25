@@ -22,10 +22,10 @@ export class Profile extends Component {
             <input type="" name="" size="" />
             <label className="label_profile" htmlFor="">Номер карты</label>
             <input type="" name="" size="" />
-            <label className="label_profile" htmlFor="">MM/YY</label>
+            <div className="label_profile-number"><label className="label_profile" htmlFor="">MM/YY</label>
             <input type="" name="" size="" />
             <label className="label_profile" htmlFor="">CVC</label>
-            <input type="" name="" size="" />
+            <input type="" name="" size="" /></div>
             <button type="submit">Сохранить</button>
           </form>
       </p>

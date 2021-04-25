@@ -44,7 +44,7 @@ export const GET_ADDRESS_LIST = 'GET_ADDRESS_LIST';
 export const GET_ADDRESS_LIST_SUCCESS = 'GET_ADDRESS_LIST_SUCCESS';
 export const GET_ADDRESS_LIST_FAILURE = 'GET_ADDRESS_LIST_FAILURE';
 
-export const getAdressList = () => ({
+export const getAddressList = () => ({
   type: GET_ADDRESS_LIST,
 })
 
