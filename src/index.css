@@ -280,6 +280,7 @@ button {
   font-family: Roboto;
   width: 300px;
   height: 50px;
+  margin: auto;
 }
 
 button:hover {
@@ -339,7 +340,6 @@ form {
   padding: 1.5rem;
   text-align: var(--justify-normal);
   position: absolute;
-  height: 360px;
   left: 270px;
   top: 150px;
   background: #FFFFFF;
@@ -612,4 +612,24 @@ top: 55%;
   flex-direction: column;
 }
 
+.home__text {
+  color: #828282;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 16px;
+  margin: auto;
+}
 
+.home__href {
+  color: #FDBF5A;
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.home__text--href {
+  cursor: pointer;
+  margin-right: 0;
+  margin-bottom: 30px;
+}

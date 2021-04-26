@@ -22,13 +22,15 @@ export class Home extends Component {
           <div className="home"> 
           <img src={logo} className="home__logo1"></img>
           <img src={logotext} className="home__logo2"></img>
-          <form onSubmit={this.authenticate}>
+          <form className="home__form" onSubmit={this.authenticate}>
            <p className="title">Войти</p> 
             <label htmlFor="email">Email:</label>
             <input type="email" name="email" size="28" />
             <label htmlFor="email">Пароль:</label>
             <input type="password" name="password" size="28" />
+            <Link to="" className="home__text home__text--href">Забыли пароль?</Link>
             <button type="submit">Войти</button>
+            <span className="home__text">Новый пользователь? <Link to="/registration" className="home__href">Регистрация</Link></span>
           </form>
           </div>
       </>)
