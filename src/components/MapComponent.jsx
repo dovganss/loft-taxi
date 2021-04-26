@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { Button, Typography, Card, CardContent, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getAddressList } from "./../actions";
-
-const Map = ({ cardData, getAddress, address }) => {
+import { getAddressList, getCard } from "../actions";
+const Map = ({ cardData, getAddress, getCard, token }) => {
   useEffect(() => {
     getAddress();
-  })
+    getCard(token);      
+  }, [])
   return (
     <>
     {cardData ? (
@@ -34,7 +34,7 @@ const Map = ({ cardData, getAddress, address }) => {
                 <option value={40}>Мариинский театр</option>
               </Select>
             </FormControl>
-            <Button variant="contained" type="submit">Вызвать такси</Button>
+            <Button className="map__button" variant="contained" type="submit">Вызвать такси</Button>
           </CardContent>
         </Card>
       </div>) : (
@@ -51,8 +51,7 @@ const Map = ({ cardData, getAddress, address }) => {
       </>
   );
 }
-
 export const MapComponent = connect(
-  state => ({cardData: state.payment.cardData, address: state.addressReducer}),
-  {getAddress: getAddressList},
+  state => ({cardData: state.payment.cardData, token: state.auth.token}),         
+  {getAddress: getAddressList, getCard},
 )(Map);

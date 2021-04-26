@@ -599,5 +599,17 @@ top: 55%;
 
 .label_profile-number {
   display: flex;
-
 }
+
+.destination, .paper {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+}
+
+.destination__form {
+  display: flex;
+  flex-direction: column;
+}
+
+
