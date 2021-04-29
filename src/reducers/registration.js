@@ -1,13 +1,13 @@
-import { VERIFIER_DONE } from "../actions";
+import { REGISTRATION_IS_DONE } from "../actions"
 
 const initialState = {
-  cardVerified: false
+  status: false
 }
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case VERIFIER_DONE: {
-      return { cardVerified: true }
+    case REGISTRATION_IS_DONE: {
+      return { status: true }
     }
     default:
       return state

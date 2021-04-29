@@ -1,17 +1,17 @@
-import { ROUTE_SUCCESS } from "../actions";
+import { GET_COORDS_SUCCESS } from "../actions";
 
 const initialState = {
-  coords: [],
-};
+  coords: []
+}
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case ROUTE_SUCCESS: {
+    case GET_COORDS_SUCCESS: {
       return {
-        coords: action.payload,
+        coords: action.payload
       }
     }
     default:
-      return state;
+      return state
   }
 }

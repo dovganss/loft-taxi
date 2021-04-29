@@ -1,0 +1,75 @@
+.map-wrapper {
+  position: relative;
+}
+
+.order {
+  position: absolute;
+  width: 486px;
+  height: 471px;
+  background: #fff;
+  z-index: 10;
+  margin-top: 150px;
+  margin-left: 50px;
+  border-radius: 10px;
+}
+
+.order__selects {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.order__selects-item {
+  margin: 0 auto;
+  width: 95%;
+  border-bottom: 1px solid #ccc;
+}
+
+.select {
+  outline: none;
+  border: none;
+  height: 60px;
+  width: 100%;
+}
+
+.order__tariff {
+  margin-bottom: 28px;
+}
+
+.order__tariff-list {
+  display: flex;
+  margin: 0 45px;
+}
+
+.order__tariff-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 167px;
+  width: 118px;
+  padding: 13px 0;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.order__tariff-item:last-child {
+  margin-right: 0;
+}
+
+.order__tariff-text {
+  text-align: center;
+}
+
+.order__tariff-price-text {
+  font-size: 11px;
+  color: #828282;
+}
+
+.order__tariff-price {
+  font-size: 24px;
+}
+
+.order__button {
+  text-align: center;
+}
