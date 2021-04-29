@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import ProfileWithConnect from './Profile';
+import Map from './Map';
 
-describe('Profile', () => {
+describe('Map', () => {
     it('renders correctly', () => {
-        const { container } = render(<ProfileWithConnect />)
+        const { container } = render(<Map />)
         expect(container).toMatchSnapshot()
     });
 });

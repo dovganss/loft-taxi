@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import mapboxgl from 'mapbox-gl'
 import { HeaderWithConnect } from "./Header";
-import { MapComponent } from "./components/MapComponent";
+import { MapComponentWithConnect } from "./components/MapComponent";
+import { connect } from 'react-redux';
+import { drawRoute } from "./drawRoute";
+import { getAddressList } from './actions';
 
 export class Map extends Component {
-  map = null;
   mapContainer = React.createRef();
+  map = null;
+
 
   componentDidMount() {
     mapboxgl.accessToken =
@@ -18,8 +22,18 @@ export class Map extends Component {
     });
   }
 
-  componentWillUnmount() {
-    this.map.remove();
+  removeMapLayer = (map) => {
+    const mapLayer = map.getLayer('route');
+    if (mapLayer) {
+      map.removeLayer('route').removeSource('route');
+    }
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.coords.coords !== prevProps.coords.coords) {
+      this.removeMapLayer(this.map);
+      drawRoute(this.map, this.props.coords.coords)
+    }
   }
 
   render() {
@@ -28,8 +42,15 @@ export class Map extends Component {
         <div className="map-wrapper">
               < HeaderWithConnect /> 
           <div className="map" ref={this.mapContainer} />
-          < MapComponent />
+          < MapComponentWithConnect />
+   
+   
         </div>
     );
   }
 }
+
+export const MapWithConnect = connect(
+  state => ({address: state.address, coords: state.coords }),         
+  { getAddress: getAddressList },
+)(Map);

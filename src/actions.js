@@ -62,7 +62,14 @@ export const getAddressListFailure = (error) => ({
 //получение маршрута
 
 export const ROUTE = 'ROUTE';
+export const ROUTE_SUCCESS = 'ROUTE_SUCCESS';
+
 export const route = (address1, address2) => ({
   type: ROUTE,
-  payload: { address1, address2 },
+  payload: [address1, address2]
+});
+
+export const routeSuccess = (coords) => ({
+  type: ROUTE_SUCCESS,
+  payload: coords
 });

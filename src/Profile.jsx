@@ -17,7 +17,7 @@ export class Profile extends Component {
   < HeaderWithConnect />
         <form className="form_profile" onSubmit={this.authenticate}>
            <p className="title">Профиль</p> 
-           <p className="subtitle">Ввдеите платежные данные</p> 
+           <p className="subtitle">Введите платежные данные</p> 
             <label className="label_profile" htmlFor="">Имя владельца</label>
             <input type="" name="" size="" />
             <label className="label_profile" htmlFor="">Номер карты</label>
