@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { getAddressList, getCoords } from '../actions';
 
 
-const Order = ({ getAddress, address, getCoords, token }) => {
+export const Order = ({ getAddress, address, getCoords, token }) => {
   useEffect(() => {
     getAddress();
   }, [])

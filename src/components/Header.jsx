@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { logOut } from '../actions';
 import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
+export class Header extends React.Component {
   unauthenticate = (event) => {
     event.preventDefault();
     this.props.logOut();

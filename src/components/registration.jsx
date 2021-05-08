@@ -6,7 +6,7 @@ import { connect, useDispatch } from 'react-redux';
 import { registrationAction } from '../actions';
 import { useForm } from 'react-hook-form';
 
-const Registration = ({ status }) => {
+export const Registration = ({ status }) => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
   const history = useHistory();

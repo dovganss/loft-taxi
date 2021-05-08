@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getAddressList } from '../actions';
 import { drawRoute } from '../drawRoute';
 
-class Map extends Component {
+export class Map extends Component {
   mapContainer = React.createRef();
   map = null;
 

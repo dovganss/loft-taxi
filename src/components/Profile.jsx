@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 
-const Profile = ({ cardVerified, token }) => {
+export const Profile = ({ cardVerified, token }) => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
 

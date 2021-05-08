@@ -1,14 +1,15 @@
-import React from "react";
-import {Profile} from "./Profile";
-import { render } from "@testing-library/react";
-import { createMemoryHistory } from "history";
+import React from 'react';
+import { render } from '@testing-library/react';
+import { Header } from './Header';
 import { Router } from "react-router-dom";
 import { Provider } from "react-redux";
+import { createMemoryHistory } from "history";
 
-describe("Profile", () => {
+
+describe("Header", () => {
   it("renders correctly", () => {
     const mockStore = {
-      getState: () => ({ isLoggedIn: true }),
+      getState: () => {},
       subscribe: () => {},
       dispatch: () => {},
     };
@@ -17,7 +18,7 @@ describe("Profile", () => {
     const {container} = render(
         <Provider store={mockStore}>
          <Router history={history}>
-          <Profile />
+          <Header />
           </Router>
         </Provider>
     );
