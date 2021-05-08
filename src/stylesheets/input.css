@@ -1,0 +1,30 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input__field {
+  width: 100%;
+  margin-bottom: 25px;
+  border: 0;
+  border-bottom: 2px solid #E4E4E4;
+  outline: none;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.input__field:focus {
+  border-color: #FDBF5A;
+}
+
+.input__label {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.input__label--font-color--grey {
+  color: #828282;
+  font-weight: 400;
+  font-size: 16px;
+}

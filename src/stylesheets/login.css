@@ -1,0 +1,51 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 112px;
+  background: #fff;
+  border-radius: 5px;
+  width: 580px;
+  min-height: 540px;
+}
+
+.login__title {
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+.login__form {
+  margin-bottom: 35px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__forgot-password {
+  color: #828282;
+  text-decoration: none;
+  position: absolute;
+  bottom: 120px;
+  right: 0;
+}
+
+.login__forgot-password:hover {
+  color: #FFA842;
+  transition: all 0.1s;
+}
+
+.login__new-user {
+  color: #828282;
+}
+
+.login__registration {
+  color: #FDBF5A;
+  text-decoration: none;
+}
+
+.login__registration:hover {
+  color: #FFA842;
+  transition: all 0.1s;
+}

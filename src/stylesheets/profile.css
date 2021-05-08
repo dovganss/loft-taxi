@@ -1,0 +1,124 @@
+.profile {
+  background: gray;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__wrapper {
+  width: 888px;
+  height: 588px;
+  background: #fff;
+  padding: 50px 50px 75px;
+  border-radius: 10px;
+}
+
+.profile__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.profile__title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.profile__description {
+  font-size: 18px;
+  color: #7B7B7B;
+}
+
+.profile__content {
+  height: 233px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__form {
+  width: 45%;
+}
+
+.profile__row {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+}
+
+.profile__precheck {
+  width: 45%;
+}
+
+.profile__precheck-content {
+  height: 182px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  padding: 18px 16px 16px 28px;
+}
+
+.profile__precheck-up-side {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.profile__precheck-logo {
+  height: 33px;
+  width: 33px;
+}
+
+.profile__precheck-date {
+  font-size: 12px;
+}
+
+.profile__precheck-card-number {
+  font-size: 21px;
+  margin-bottom: 35px;
+}
+
+.profile__precheck-bottom-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile__precheck-chip {
+  width: 30px;
+  height: 27px;
+}
+
+.profile__precheck-master-card-logo {
+  width: 48px;
+  height: 28px;
+}
+
+.profile__verified {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 345px;
+  width: 888px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 80px 114px;
+}
+
+.profile__verified-title {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.profile__verified-text {
+  color: #7B7B7B;
+  font-size: 18px;
+}
+
+.profile__button {
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+.button {
+  width: 350px;
+  height: 60px;
+  border-radius: 60px;
+  background: #FDBF5A;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.button:hover {
+  background: #FFA842;
+  transition: all 0.2s;
+}
+
+
+.button--login {
+  margin-top: 75px;
+}
+
+.button--profile-verified-card {
+  font-size: 21px;
+}
